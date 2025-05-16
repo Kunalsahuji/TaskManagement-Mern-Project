@@ -4,11 +4,11 @@ import Navbar from "../components/Navbar";
 import RegisterPage from "../pages/RegisterPage";
 import LoginPage from "../pages/LoginPage";
 import Dashboard from "../pages/Dashboard";
-import TaskDetails from "../components/TaskList";
 import PrivateRoute from "../components/PrivateRoute";
 import UpdateTask from "../components/UpdateTask";
 import TaskForm from "../components/TaskForm";
 import TaskList from "../components/TaskList";
+import ViewTaskPage from "../pages/ViewTaskPage";
 
 const AppRouter = () => {
     return (
@@ -43,9 +43,10 @@ const AppRouter = () => {
 
                     <Route path="/tasks/view/:id" element={
                         <PrivateRoute>
-                            <TaskDetails />
+                            <ViewTaskPage />
                         </PrivateRoute>
                     } />
+
                     <Route path="/tasks/update/:id" element={
                         <PrivateRoute>
                             <UpdateTask />
